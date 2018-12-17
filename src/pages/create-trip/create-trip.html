@@ -22,4 +22,9 @@
 
 <ion-content padding>
   Let's create a trip
+
+  <button ion-button (click)='goToDetails()'>Go to details</button>
+
+  <button ion-button (click)='takePicture()'>Take picture</button>
+  <img *ngIf='pictureData' src='data:image/jpeg;base64,{{ pictureData }}' />
 </ion-content>

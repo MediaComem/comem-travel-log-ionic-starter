@@ -14,5 +14,8 @@
 
 
 <ion-content padding>
-  Let's display a map of places
+  <div class='map' leaflet
+       [leafletOptions]='mapOptions'
+       [leafletLayers]='mapMarkers'
+       (leafletMapReady)='onMapReady($event)'></div>
 </ion-content>

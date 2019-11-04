@@ -11,7 +11,7 @@ import { AuthRequest } from '../models/auth-request';
  * Authentication service for login/logout.
  */
 @Injectable({ providedIn: 'root' })
-export class AuthProvider {
+export class AuthService {
 
   private auth$: Observable<AuthResponse>;
   private authSource: ReplaySubject<AuthResponse>;

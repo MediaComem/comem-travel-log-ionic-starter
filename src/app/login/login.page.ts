@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../auth/auth.service';
 import { AuthRequest } from '../models/auth-request';
@@ -24,7 +25,10 @@ export class LoginPage {
    */
   loginError: boolean;
 
-  constructor(private auth: AuthService) {
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) {
     this.authRequest = new AuthRequest();
   }
 
@@ -43,7 +47,9 @@ export class LoginPage {
 
     // Perform the authentication request to the API.
     this.auth.logIn(this.authRequest).subscribe({
-      next: undefined,
+      next: () => {
+        this.router.navigateByUrl('/home');
+      },
       error: err => {
         this.loginError = true;
         console.warn(`Authentication failed: ${err.message}`);

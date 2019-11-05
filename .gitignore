@@ -31,4 +31,5 @@ npm-debug.log*
 /www
 
 # Environment files
-src/environments/environment.*.ts
+src/environments/*
+!src/environments/environment.sample.ts

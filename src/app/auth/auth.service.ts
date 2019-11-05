@@ -8,6 +8,7 @@ import { Storage } from '@ionic/storage';
 import { AuthResponse } from '../models/auth-response';
 import { User } from '../models/user';
 import { AuthRequest } from '../models/auth-request';
+import { environment } from 'src/environments/environment';
 
 /**
  * Authentication service for login/logout.
@@ -44,7 +45,7 @@ export class AuthService {
 
   logIn(authRequest: AuthRequest): Observable<User> {
 
-    const authUrl = 'https://comem-travel-log-api.herokuapp.com/api/auth';
+    const authUrl = `${environment.apiUrl}/auth`;
     return this.http.post<AuthResponse>(authUrl, authRequest).pipe(
       delayWhen(auth => {
         return this.saveAuth(auth);

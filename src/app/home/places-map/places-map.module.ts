@@ -1,25 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PlacesMapPage } from './places-map.page';
+import { PlacesMapPageRoutingModule } from './places-map-routing.module';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: PlacesMapPage
-  }
-];
+import { PlacesMapPage } from './places-map.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    PlacesMapPageRoutingModule
   ],
   declarations: [PlacesMapPage]
 })

@@ -18,9 +18,9 @@ export class HomePage {
 
   constructor() {
     this.tabs = [
-      { title: 'New Trip', icon: 'add', path: 'new' },
-      { title: 'Places Map', icon: 'map', path: 'map'},
-      { title: 'Trip List', icon: 'list', path: 'list'}
+      { title: 'New Trip', icon: 'add', path: 'create-trip' },
+      { title: 'Places Map', icon: 'map', path: 'places-map' },
+      { title: 'Trip List', icon: 'list', path: 'trip-list' }
     ];
   }
 

@@ -12,4 +12,7 @@
 
 <ion-content>
   Let's create a trip
+  <ion-button (click)="createTrip()">Create Trip</ion-button>
+  <ion-button *ngIf="tripId"
+    (click)="getTrip()">Get Trip</ion-button>
 </ion-content>

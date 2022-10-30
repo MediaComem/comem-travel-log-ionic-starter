@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ViewDidEnter } from '@ionic/angular';
+import { ViewWillEnter } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -8,10 +8,10 @@ import { environment } from 'src/environments/environment';
   templateUrl: './trip-list.page.html',
   styleUrls: ['./trip-list.page.scss'],
 })
-export class TripListPage implements ViewDidEnter {
+export class TripListPage implements ViewWillEnter {
   constructor(private http: HttpClient) {}
 
-  ionViewDidEnter(): void {
+  ionViewWillEnter(): void {
     // Make an HTTP request to retrieve the trips.
     const url = `${environment.apiUrl}/trips`;
     this.http.get(url).subscribe((trips) => {
